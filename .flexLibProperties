@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<flexLibProperties includeAllClasses="true" useMultiPlatformConfig="false" version="3">
+  <includeClasses>
+    <classEntry path="single.FacadeSingle"/>
+    <classEntry path="interfaces.IDispose"/>
+    <classEntry path="interfaces.IManager"/>
+    <classEntry path="ApplicationInit"/>
+    <classEntry path="interfaces.ISingle"/>
+  </includeClasses>
+  <includeResources/>
+  <namespaceManifests/>
+</flexLibProperties>
