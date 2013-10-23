@@ -17,6 +17,13 @@
     <classEntry path="interfaces.resourceVersion.IResourceVersionManager"/>
     <classEntry path="debugger.Debugger"/>
     <classEntry path="interfaces.IDelegate"/>
+    <classEntry path="error.FacadeError"/>
+    <classEntry path="AppNotification"/>
+    <classEntry path="error.AppNotificationError"/>
+    <classEntry path="interfaces.IThread"/>
+    <classEntry path="manager.Manager"/>
+    <classEntry path="command.AppCommand"/>
+    <classEntry path="error.AppCommandError"/>
   </includeClasses>
   <includeResources/>
   <namespaceManifests/>
