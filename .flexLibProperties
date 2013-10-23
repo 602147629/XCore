@@ -6,6 +6,17 @@
     <classEntry path="interfaces.IManager"/>
     <classEntry path="ApplicationInit"/>
     <classEntry path="interfaces.ISingle"/>
+    <classEntry path="interfaces.resourceLoader.IResourceLoaderListener"/>
+    <classEntry path="interfaces.resourceLoader.IResourceItem"/>
+    <classEntry path="interfaces.resourceLoader.IResourceGroup"/>
+    <classEntry path="interfaces.resourceLoader.IResource"/>
+    <classEntry path="resourceLoader.LoadContext"/>
+    <classEntry path="resourceLoader.ResourceItem"/>
+    <classEntry path="resourceLoader.ResourceGroup"/>
+    <classEntry path="interfaces.resourceLoader.IResourceProxy"/>
+    <classEntry path="interfaces.resourceVersion.IResourceVersionManager"/>
+    <classEntry path="debugger.Debugger"/>
+    <classEntry path="interfaces.IDelegate"/>
   </includeClasses>
   <includeResources/>
   <namespaceManifests/>
