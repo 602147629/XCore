@@ -1,5 +1,7 @@
 package single
 {
+	import appCenter.AppCenter;
+	
 	import flash.utils.Dictionary;
 	
 	import interfaces.IDispose;
@@ -19,12 +21,12 @@ package single
 		 * 添加应用程序中心
 		 * @param appName  应用程序名称
 		 */
-		public function addAppCenter(appName:String):AppCenterSingle
+		public function addAppCenter(appName:String):AppCenter
 		{
 			_appName = appName;
 			if(_dic[_appName])
 				return _dic[_appName];
-			return _dic[_appName] = AppCenterSingle.Instance();
+			return _dic[_appName] = new AppCenter;
 		}
 		
 		
@@ -34,7 +36,7 @@ package single
 		 * @return    管理器对象
 		 * 
 		 */
-		public function getAppCenterByName(appName:String):AppCenterSingle
+		public function getAppCenterByName(appName:String):AppCenter
 		{
 			_appName = appName;
 			if(_dic[_appName])
@@ -91,7 +93,7 @@ package single
 		}
 		
 		private static var _instance:ApplicationSingle;
-		private var _dic:Dictionary;
+		private var _dic:Dictionary = new Dictionary;
 		
 		private var _appName:String = "";
 		

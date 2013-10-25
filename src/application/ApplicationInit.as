@@ -1,11 +1,13 @@
-package
+package application
 {
+	import appCenter.AppCenter;
+	
+	import facade.ExpandAppFacade;
+	
 	import flash.display.DisplayObject;
 	
 	import interfaces.IDispose;
 	import interfaces.IManager;
-	
-	import org.puremvc.as3.patterns.facade.Facade;
 	
 	import single.AppCenterSingle;
 	import single.ApplicationSingle;
@@ -26,9 +28,9 @@ package
 			this._stage = stage;
 			this._appCenter = ApplicationSingle.Instance().addAppCenter(this._appName);
 			
-			_facade = new ExpandAppFacade;
-			_facade.appName = appName;
-			FacadeSingle.Instance().addFacadeByName(_facade.appName,_facade);
+			expandFacade = new ExpandAppFacade;
+			expandFacade.appName = appName;
+			FacadeSingle.Instance().addFacadeByName(expandFacade.appName,_facade);
 			
 			construct();
 		}
@@ -63,42 +65,42 @@ package
 			// TODO Auto Generated method stub
 			
 		}
+
+		public function get expandFacade():ExpandAppFacade
+		{
+			return this. _facade;
+		}
+
+		public function set expandFacade(value:ExpandAppFacade):void
+		{
+			this._facade = value;
+		}
 		
-		public static function Instance():ApplicationInit
+		public function get appCenter():AppCenter
 		{
-			if(!_instance)
-				_instance = new ApplicationInit;
-			return _instance;
+			return _appCenter;
 		}
 
-		public function get facade():ExpandAppFacade
+		/**
+		 * 应用程序名称 
+		 */
+		public function get appName():String
 		{
-			return _facade;
-		}
-
-		public function set facade(value:ExpandAppFacade):void
-		{
-			_facade = value;
+			return _appName;
 		}
 
 		
 		public function ApplicationInit()
 		{
-			if(_instance)
-				throw new Error(REPEAT);
+			
 		}
 		
-		private static var _instance:ApplicationInit;
-		
-		/**
-		 * 应用程序名称 
-		 */		
 		private var _appName:String;
 		private var _stage:DisplayObject;
 		/**
 		 * 所有应用程序 
 		 */
-		private var _appCenter:AppCenterSingle;
+		private var _appCenter:AppCenter;
 		private var _facade:ExpandAppFacade;
 		
 		public static const REPEAT:String = "不能重复创建ApplicationInit对象";

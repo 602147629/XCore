@@ -1,4 +1,4 @@
-package
+package notification
 {
 	import error.AppNotificationError;
 	

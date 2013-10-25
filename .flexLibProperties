@@ -4,7 +4,7 @@
     <classEntry path="single.FacadeSingle"/>
     <classEntry path="interfaces.IDispose"/>
     <classEntry path="interfaces.IManager"/>
-    <classEntry path="ApplicationInit"/>
+    <classEntry path="application.ApplicationInit"/>
     <classEntry path="interfaces.ISingle"/>
     <classEntry path="interfaces.resourceLoader.IResourceLoaderListener"/>
     <classEntry path="interfaces.resourceLoader.IResourceItem"/>
@@ -18,12 +18,42 @@
     <classEntry path="debugger.Debugger"/>
     <classEntry path="interfaces.IDelegate"/>
     <classEntry path="error.FacadeError"/>
-    <classEntry path="AppNotification"/>
+    <classEntry path="notification.AppNotification"/>
     <classEntry path="error.AppNotificationError"/>
     <classEntry path="interfaces.IThread"/>
     <classEntry path="manager.Manager"/>
     <classEntry path="command.AppCommand"/>
     <classEntry path="error.AppCommandError"/>
+    <classEntry path="expand.ExpandAppNotification"/>
+    <classEntry path="expand.ExpandAppCommand"/>
+    <classEntry path="interfaces.notify.IExpandNotifyMethod"/>
+    <classEntry path="interfaces.command.IAsyncCommand"/>
+    <classEntry path="interfaces.command.IAsyncMacroCommand"/>
+    <classEntry path="application.ApplicationInitProxy"/>
+    <classEntry path="interfaces.model.IModel"/>
+    <classEntry path="interfaces.proxy.IProxy"/>
+    <classEntry path="appCenter.AppCenter"/>
+    <classEntry path="error.AppCenterError"/>
+    <classEntry path="interfaces.toolTip.IToolTipData"/>
+    <classEntry path="interfaces.toolTip.IToolTipSkin"/>
+    <classEntry path="event.tipData.TipDataEvent"/>
+    <classEntry path="toolTip.DefaultToolTipSkin"/>
+    <classEntry path="interfaces.gameShareData.IGameShareData"/>
+    <classEntry path="gameShareData.GameShareData"/>
+    <classEntry path="interfaces.controller.IController"/>
+    <classEntry path="interfaces.controller.IViewerController"/>
+    <classEntry path="interfaces.controller.IBasicViewerController"/>
+    <classEntry path="contrller.ContrllerInfo"/>
+    <classEntry path="contrller.BasicViewerController"/>
+    <classEntry path="tracker.CommandTracker"/>
+    <classEntry path="XController"/>
+    <classEntry path="interfaces.gameContext.IGameContext"/>
+    <classEntry path="XManager"/>
+    <classEntry path="XProxy"/>
+    <classEntry path="gameContext.GameContext"/>
+    <classEntry path="interfaces.gameModule.IGameModule"/>
+    <classEntry path="interfaces.gameMain.IGameMain"/>
+    <classEntry path="interfaces.render.IFrame"/>
   </includeClasses>
   <includeResources/>
   <namespaceManifests/>

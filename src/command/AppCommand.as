@@ -1,6 +1,12 @@
 package command
 {
+	import appCenter.AppCenter;
+	
 	import error.AppCommandError;
+	
+	import facade.ExpandAppFacade;
+	
+	import notification.AppNotification;
 	
 	import org.puremvc.as3.interfaces.INotification;
 	import org.puremvc.as3.patterns.command.SimpleCommand;
@@ -17,7 +23,7 @@ package command
 			super();
 		}
 		
-		public override function execute(iNotify:INotification):void
+		override public function execute(iNotify:INotification):void
 		{
 			super.execute(iNotify);
 			this.setAppName(iNotify);
@@ -36,7 +42,7 @@ package command
 			return appNotify;
 		}
 		
-		public function get appfacade():Facade
+		public function get expandFacade():ExpandAppFacade
 		{
 			if ("" == this.currentAppName || null == this.currentAppName) 
 			{
@@ -49,7 +55,7 @@ package command
 			return this._facade;
 		}
 		
-		public function get gameCenter():AppCenterSingle
+		public function get gameCenter():AppCenter
 		{
 			if ("" == this.currentAppName || null == this.currentAppName) 
 			{
@@ -62,9 +68,9 @@ package command
 			return this._gameCenter;
 		}
 		
-		private var _facade:Facade;
+		private var _facade:ExpandAppFacade;
 		
-		private var _gameCenter:AppCenterSingle;
+		private var _gameCenter:AppCenter;
 		
 		protected var currentAppName:String="";
 	}

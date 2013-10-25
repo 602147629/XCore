@@ -1,12 +1,13 @@
 package single
 {
+	import facade.ExpandAppFacade;
+	
 	import flash.utils.Dictionary;
 	
 	import interfaces.IDispose;
 	import interfaces.ISingle;
 	
 	import org.puremvc.as3.interfaces.IFacade;
-	import org.puremvc.as3.patterns.facade.Facade;
 
 	/**
 	 * 管理Facade对象
@@ -23,7 +24,7 @@ package single
 		 * @return 创建facade对象
 		 * 
 		 */
-		public function addFacadeByName(facadeName:String,ifacade:IFacade):Facade
+		public function addFacadeByName(facadeName:String,ifacade:IFacade):ExpandAppFacade
 		{
 			_appName = facadeName;
 			if(_dic[_appName])
@@ -37,7 +38,7 @@ package single
 		 * @return   facade对象
 		 * 
 		 */
-		public function getFacadeByName(facadeName:String):Facade
+		public function getFacadeByName(facadeName:String):ExpandAppFacade
 		{
 			_appName = facadeName;
 			if(_dic[_appName])
@@ -92,7 +93,7 @@ package single
 		}
 		
 		private static var _instance:FacadeSingle;
-		private var _dic:Dictionary;
+		private var _dic:Dictionary = new Dictionary;
 		
 		private var _appName:String = "";
 		

@@ -1,11 +1,15 @@
-package
+package facade
 {
+	import command.AppCommand;
+	
 	import error.FacadeError;
 	
 	import flash.utils.Dictionary;
 	
 	import interfaces.IDelegate;
 	import interfaces.IManager;
+	
+	import notification.AppNotification;
 	
 	import org.puremvc.as3.interfaces.ICommand;
 	import org.puremvc.as3.interfaces.INotification;
@@ -18,7 +22,6 @@ package
 		{
 			super();
 			this._commandDic = new Dictionary();
-			return;
 		}
 		
 		public function addCommand(commandName:String, commandClass:Class):void
@@ -30,13 +33,13 @@ package
 				throw new FacadeError(errorStr);
 			}
 			var arr:Array=this._commandDic[commandName];
-			if (null == arr) 
+			if (!arr) 
 			{
 				arr = new Array();
 				this._commandDic[commandName] = arr;
 			}
 			var index:int=arr.indexOf(commandClass);
-			if (-1 == index) 
+			if (index == -1) 
 			{
 				arr.push(commandClass);
 			}
@@ -95,13 +98,13 @@ package
 		{
 			var length:int=0;
 			var index:int=0;
-			var iCommandInstance:ICommand=null;
+			var iCommandInstance:Class=null;
 			var iCommand:ICommand=null;
 			var errorStr:String=null;
 			var exsit:Boolean=false;
-			var type:String=iNotify.getType as String;
+			var type:String=iNotify.getName() as String;
 			var arr:Array=this._commandDic[type];
-			if (null != arr)
+			if (arr != null)
 			{
 				arr = arr.concat();
 				length = arr.length;
@@ -109,7 +112,7 @@ package
 				while (index < length) 
 				{
 					iCommandInstance = arr[index];
-					iCommand = iCommandInstance;
+					iCommand = new iCommandInstance;
 					iCommand.execute(iNotify);
 					exsit = true;
 					++index;
@@ -123,6 +126,8 @@ package
 		}
 		
 		protected var _commandDic:Dictionary;
+		
+		protected var _appName:String;
 		
 		public function set name(name:String):void
 		{
@@ -139,13 +144,13 @@ package
 		public function set appName(appName:String):void
 		{
 			// TODO Auto Generated method stub
-			
+			_appName = appName;
 		}
 		
 		public function get appName():String
 		{
 			// TODO Auto Generated method stub
-			return null;
+			return _appName;
 		}
 		
 		public function dispose():void

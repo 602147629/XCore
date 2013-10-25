@@ -2,6 +2,7 @@ package manager
 {
 	import interfaces.IDelegate;
 	import interfaces.IManager;
+	import notification.AppNotification;
 	
 	public class Manager implements IManager
 	{
